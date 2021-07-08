@@ -35,6 +35,15 @@ a {
   color: $primary-color-text;
 }
 
+.friendship-relations {
+  a {
+    color: $primary-color-dark;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin: 0 4px;
+  }
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -241,6 +250,13 @@ form {
     .post-date {
       font-size: 0.6em;
     }
+
+    .post-likes {
+      color: $primary-color;
+      font-weight: bold;
+      font-size: 0.9em;
+      margin: 0 4px;
+    }
   }
 
   .post-content {
@@ -272,6 +288,11 @@ form {
         font-size: 0.6em;
       }
     }
+
+    .justify-right {
+      justify-content: end;
+      font-size: 0.7em;
+    }
   }
 }
 
@@ -289,6 +310,29 @@ form {
     font-size: 0.8em;
     margin: 0 0 8px 0;
     color: $primary-color-dark;
+  }
+
+  .profile-pending-request {
+    font-size: 0.7em;
+    margin: 0 0 8px 0;
+    color: #f00;
+    font-style: italic;
+  }
+
+  .profile-friendship-request {
+    font-size: 0.7em;
+    margin: 0 0 8px 8px;
+    padding: 2px;
+    padding-right: 4px;
+    border-radius: 2px;
+    color: $primary-color-text;
+    font-style: italic;
+    background-color: $primary-color-dark;
+  }
+
+  .profile-friendship-request:hover {
+    color: $primary-color-light;
+    background-color: $primary-color;
   }
 }
 
