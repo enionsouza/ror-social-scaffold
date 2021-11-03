@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
+  include Response
   before_action :authenticate_user!
 
   def index
     @post = Post.new
     timeline_posts
+    json_response(Post.all)
   end
 
   def create
