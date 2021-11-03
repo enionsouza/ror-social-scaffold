@@ -299,6 +299,6 @@ Devise.setup do |config|
 
   config.jwt do |jwt|
     # jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
-    jwt.secret = '7833b72eb80e942cf8ca2c63f20b2e68e79a7a12a8'
+    jwt.secret = Rails.application.credentials.devise[:jwt_secret_key]
   end
 end

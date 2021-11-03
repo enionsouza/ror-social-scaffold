@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   root 'posts#index'
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
-  resources :users, only: [:index, :show]
-  resources :posts, only: [:index, :create] do
-    resources :comments, only: [:index, :create]
-    resources :likes, only: [:create, :destroy]
+  resources :users, only: %i[index show]
+  resources :posts, only: %i[index create] do
+    resources :comments, only: %i[index create]
+    resources :likes, only: %i[create destroy]
   end
 
   post 'friendships/create/:inviter_id/:invitee_id/:mode', to: 'friendships#create', as: 'friendship_create'
