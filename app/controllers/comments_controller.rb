@@ -1,4 +1,12 @@
 class CommentsController < ApplicationController
+  include Response
+  before_action :authenticate_user!
+
+  def index
+    @comments = Comment.where(post_id: params[:post_id])
+    json_response(@comments)
+  end
+
   def create
     @comment = Comment.new(comment_params)
     @comment.post_id = params[:post_id]
