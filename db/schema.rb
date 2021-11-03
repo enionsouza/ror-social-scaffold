@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_150816) do
+ActiveRecord::Schema.define(version: 2021_11_03_201342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "allowlisted_jwts", force: :cascade do |t|
+    t.string "jti", null: false
+    t.string "aud", null: false
+    t.datetime "exp", null: false
+    t.string "remote_ip"
+    t.string "os_data"
+    t.string "browser_data"
+    t.string "device_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jti"], name: "index_allowlisted_jwts_on_jti", unique: true
+  end
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
