@@ -1,6 +1,6 @@
 # Scaffold for social media app with Ruby on Rails
 
-> This repo includes Milestone 2 code for social media app with basic styling. In this Milestone, we added Friendship feature to the social media app.
+In this project, we transformed the original Blog app into an back-end server, providing it with some API endpoints to a to allow it to be used in different ways, rather than just through the site - for example, a mobile app or a CLI application.
 
 ## Built With
 
@@ -23,7 +23,21 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-Instal gems with:
+To run this project, you only need a computer with internet connection and a browser installed, and follow these steps:
+
+In your terminal, in the folder of your preference, type the following bash command to clone this repository:
+
+```sh
+git clone git@github.com:enionsouza/ror-social-scaffold.git
+```
+
+then
+
+```sh
+cd ror-social-scaffold
+```
+
+Install gems with:
 
 ```
 bundle install
@@ -50,27 +64,36 @@ Start server with:
     rails server
 ```
 
-Open `http://localhost:3000/` in your browser.
+API
+Open the rest API client of your choice (we recommend using Thunder client VScode extension)
 
-### Run tests
+### API endpoints
 
-```
-    rpsec --format documentation
-```
+When signing in, copy the bearer token from the authorization response headers.
 
-> Tests were created regarding only the Friendship feature added in this Milestone.
-
-### Deployment
-
-TBA
+| Name           | Endpoint                   | Method | Header                                                                                          | Body                                                                                                            |
+| -------------- | -------------------------- | ------ | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Sign-up        | `/users`                   | POST   | { "Accept": "application/json", "Content-Type": "application/json" }                            | {"user": {"name": "Mario", "email": "mario@mail.com", "password": "123456", "password_confirmation": "123456"}} |
+| Sign-in        | `/users/sign_in`           | POST   | { "Accept": "application/json", "Content-Type": "application/json" }                            | {"email": "mario@mail.com", "password": "123456"}                                                               |
+| Sign-out       | `/users/sign_out`          | DELETE | { "Accept": "application/json", "Content-Type": "application/json", "Authorization": JWT token} |                                                                                                                 |
+| Create post    | `/posts`                   | POST   | { "Accept": "application/json", "Content-Type": "application/json", "Authorization": JWT token} | {"content": "Example post"}                                                                                     |
+| Get Post       | `/posts`                   | GET    | { "Accept": "application/json", "Content-Type": "application/json", "Authorization": JWT token} |                                                                                                                 |
+| Create Comment | `/posts/:post_id/comments` | POST   | { "Accept": "application/json", "Content-Type": "application/json", "Authorization": JWT token} | {"content": "Example comment"}                                                                                  |
+| Get comments   | `/posts/:post_id/comments` | GET    | { "Accept": "application/json", "Content-Type": "application/json", "Authorization": JWT token} |                                                                                                                 |
 
 ## Authors
 
-👤 **Julian Carracedo**
+👤 **Ángel Díaz**
 
-- GitHub: [@JuliCarracedo](https://github.com/JuliCarracedo)
-- Twitter: [@CarracedoTrigo](https://twitter.com/CarracedoTrigo)
-- LinkedIn: [Julian Carracedo](https://www.linkedin.com/in/julian-carracedo/)
+- GitHub: [@ad9311](https://github.com/ad9311)
+- Twitter: [@adiaz9311](https://twitter.com/adiaz9311)
+- LinkedIn: [ad9311](https://linkedin.com/in/ad9311)
+
+👤 **Mario Alberto Rodriguez Cota**
+
+- GitHub: [@mariordgez](https://github.com/mariordgez)
+- Twitter: [@MarioRo75396624](https://twitter.com/MarioRo75396624)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mario-alberto-rodriguez-cota-a2860a205)
 
 👤 **Ênio Neves de Souza**
 

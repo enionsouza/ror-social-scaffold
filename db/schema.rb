@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_150816) do
+ActiveRecord::Schema.define(version: 2021_11_04_041129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "allowlisted_jwts", force: :cascade do |t|
+    t.string "jti", null: false
+    t.string "aud", null: false
+    t.datetime "exp", null: false
+    t.string "remote_ip"
+    t.string "os_data"
+    t.string "browser_data"
+    t.string "device_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jti"], name: "index_allowlisted_jwts_on_jti", unique: true
+  end
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -33,6 +46,12 @@ ActiveRecord::Schema.define(version: 2021_07_07_150816) do
     t.datetime "updated_at", null: false
     t.index ["friend_id"], name: "index_friendships_on_friend_id"
     t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
+  create_table "jwt_denylist", force: :cascade do |t|
+    t.string "jti", null: false
+    t.datetime "exp", null: false
+    t.index ["jti"], name: "index_jwt_denylist_on_jti"
   end
 
   create_table "likes", force: :cascade do |t|
