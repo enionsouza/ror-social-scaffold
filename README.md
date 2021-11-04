@@ -1,6 +1,6 @@
 # Scaffold for social media app with Ruby on Rails
 
-> This repo includes Milestone 2 code for social media app with basic styling. In this Milestone, we added Friendship feature to the social media app.
+In this project, we transformed the original Blog app into an back-end server, providing it with some API endpoints to a to allow it to be used in different ways, rather than just through the site - for example, a mobile app or a CLI application.
 
 ## Built With
 
