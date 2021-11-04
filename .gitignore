@@ -23,8 +23,7 @@
 /public/assets
 .byebug_history
 
-# Ignore master key for decrypting credentials and more.
-/config/master.key
-
 package-lock.json
 Gemfile.lock
+# Ignore master key for decrypting credentials and more.
+/config/master.key

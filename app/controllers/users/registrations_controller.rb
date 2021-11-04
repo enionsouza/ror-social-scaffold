@@ -5,10 +5,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def respond_with(resource, _opts = {})
     register_success && return if resource.persisted?
-<<<<<<< HEAD
-
-=======
->>>>>>> new-api
     register_failed
   end
 
@@ -17,10 +13,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def register_failed
-<<<<<<< HEAD
-    render json: { message: 'Something went wrong.' }
-=======
     render json: { message: "Something went wrong." }
->>>>>>> new-api
   end
 end

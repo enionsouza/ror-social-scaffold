@@ -12,24 +12,10 @@ class Users::SessionsController < Devise::SessionsController
 
   def respond_to_on_destroy
     log_out_success && return if current_user
-<<<<<<< HEAD
-
-=======
->>>>>>> new-api
     log_out_failure
   end
 
   def log_out_success
-<<<<<<< HEAD
-    render json: { message: 'You are logged out.' }, status: :ok
-  end
-
-  def log_out_failure
-    render json: { message: 'Sorry: Unable to log out.' }, status: :unauthorized
-  end
-
-end
-=======
     render json: { message: "You are logged out."}, status: :ok
   end
 
@@ -37,4 +23,3 @@ end
     render json: { message: "Hmm nothing happened."}, status: :unauthorized
   end
 end
->>>>>>> new-api
