@@ -65,7 +65,7 @@ Start server with:
 ```
 
 API
-Open the rest API client of your choice (we recommend using Thunder client VScode extension or Postman)
+Open the rest API client of your choice (we recommend using Thunder client VScode extension)
 
 ### API endpoints
 
