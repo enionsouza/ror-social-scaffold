@@ -69,6 +69,8 @@ Open the rest API client of your choice (we recommend using Thunder client VScod
 
 ### API endpoints
 
+When signing in, copy the bearer token from the authorization response headers.
+
 | Name           | Endpoint                   | Method | Header                                                                                          | Body                                                                                                            |
 | -------------- | -------------------------- | ------ | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | Sign-up        | `/users`                   | POST   | { "Accept": "application/json", "Content-Type": "application/json" }                            | {"user": {"name": "Mario", "email": "mario@mail.com", "password": "123456", "password_confirmation": "123456"}} |
