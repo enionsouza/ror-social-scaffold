@@ -10,12 +10,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     if @post.save
-      # render json: { message: 'Post created!' }
       respond_to do |format|
         format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
         format.json { render json: { message: 'Post Created!' }}
       end
-      # redirect_to posts_path, notice: 'Post was successfully created.'
     else
       timeline_posts
       render :index, alert: 'Post was not created.'
